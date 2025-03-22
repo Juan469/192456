@@ -2,51 +2,53 @@ import java.util.Scanner;
 
 public class MuyMalHecho {
     public static void main(String[] args) throws Exception {
-        Scanner S = new Scanner(System.in);
-        int C = 0;
+        Scanner Leer = new Scanner(System.in);
+        byte contador = 0;
 
         System.out.println("Número de usuarios a ingresar:");
-        int N = S.nextInt();
-        S.nextLine();
+        int numero = Leer.nextInt();
+        Leer.nextLine();
 
-        int E1 = 0, E2 = 0, E3 = 0;
-        String N1 = "", N2 = "", N3 = "";
+        int edad1 = 0, edad2 = 0, edad3 = 0;
+        String numero1 = "", numero2 = "", numero3 = "";
 
-        while (C < N) {
+        while (contador < numero) {
             System.out.println("Nombre del usuario:");
-            String U = S.nextLine();
+            String u = Leer.nextLine();
 
             System.out.println("Edad del usuario:");
-            int A = S.nextInt();
-            S.nextLine();
+            int A = Leer.nextInt();
+            Leer.nextLine();
 
-            if (C == 0) {
-                N1 = U;
-                E1 = A;
-            } else if (C == 1) {
-                N2 = U;
-                E2 = A;
-            } else if (C == 2) {
-                N3 = U;
-                E3 = A;
+            if (contador == 0) {
+                numero1 = u;
+                edad1 = A;
+            } else if (contador== 1) {
+                numero2 = u;
+                edad2 = A;
+            } else if (contador== 2) {
+                numero3 = u;
+                edad3 = A ;
             }
 
             if (A >= 18) {
-                System.out.println(U + " es mayor de edad.");
+                System.out.println(u + " es mayor de edad.");
             } else {
-                System.out.println(U + " es menor de edad.");
+                System.out.println(u+ " es menor de edad.");
             }
 
             if (A > 120 || A < 1) {
                 System.out.println("Edad no válida.");
             }
 
-            C = C + 1;
         }
 
         System.out.println("Resumen:");
-        System.out.println("Usuario 1: " + N1 + " - Edad: " + E1);
-        System.out.println("Usuario 2: " + N2 + " - Edad: " + E2);
-        System.out.println("Usuario 3: " + N3 + " - Edad: " + E3);
+        System.out.println("Usuario 1: " + numero1 + " - Edad: " + edad1);
+        System.out.println("Usuario 2: " + numero2 + " - Edad: " + edad2);
+        System.out.println("Usuario 3: " + numero3 + " - Edad: " + edad3);
+
+    Leer.close();
     }
+    
 }
